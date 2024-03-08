@@ -1,4 +1,4 @@
-Creating a README for your project based on the provided details can help guide users through understanding, running, and potentially contributing to your project. Below is a structured README template inspired by the information you've shared:
+
 Budget Dashboard Project
 Description
 
@@ -15,8 +15,10 @@ Major Themes
 Reflections on Improvements
 
 If given the opportunity to redo this project, I would focus more on optimizing the data processing logic to enhance performance, especially when dealing with large datasets. Additionally, exploring more advanced state management solutions, like Redux or Context API, could provide cleaner state handling across components. Implementing responsive design principles to ensure the dashboard looks and functions well on various devices would also be a priority.
+
+
 Running the Project
 
 To run the Budget Dashboard:
 
-  Go to website
+  Go to website: https://dan1423.github.io/simple-budget-app/
