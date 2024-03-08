@@ -1,8 +1,11 @@
 {
   "name": "simple-budget-app",
   "version": "0.1.0",
+  "homepage": "https://dan1423.github.io/simple-budget-app",
   "private": true,
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -23,6 +26,7 @@
     "autoprefixer": "^10",
     "postcss": "^8",
     "tailwindcss": "^3",
-    "typescript": "^5"
+    "typescript": "^5",
+    "gh-pages": "^5.0.0"
   }
 }
