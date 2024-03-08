@@ -16,9 +16,18 @@ Reflections on Improvements
 
 If given the opportunity to redo this project, I would focus more on optimizing the data processing logic to enhance performance, especially when dealing with large datasets. Additionally, exploring more advanced state management solutions, like Redux or Context API, could provide cleaner state handling across components. Implementing responsive design principles to ensure the dashboard looks and functions well on various devices would also be a priority.
 
+Things I can improve on:
+  Making app more responsive
+  Dropdowns are disabled because they are not fully implemented
+  Update code to allow bar graph to be dynamic, so that when user updates values it changes as well
+  Including more graphs to compare personal spending with public spending data
+  Add percentages to pie chart
+
 
 Running the Project
 
 To run the Budget Dashboard:
 
   Go to website: https://dan1423.github.io/simple-budget-app/
+  You can change the amount on each row, and the pie chart changes in real time
+  Unfortunately, The bar graph is static because I did not have enough time

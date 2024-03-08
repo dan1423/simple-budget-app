@@ -59,6 +59,7 @@ const PieChart = ({ data, width = 600, height = 600 }) => {
       const label = grp.data.name + " (" + grp.value + ")";
   
       return (
+        
         <g
           key={i}
           className={styles.slice}
@@ -105,6 +106,7 @@ const PieChart = ({ data, width = 600, height = 600 }) => {
     });
   
     return (
+      
       <svg width={width} height={height} style={{ display: "inline-block" }}>
         <g
           transform={`translate(${width / 2}, ${height / 2})`}

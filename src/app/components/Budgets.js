@@ -198,7 +198,7 @@ const Budgets = (props) => {
 
   return (
     <div>
-      <h1>Budget Dashboard v1</h1>
+      <p className="text-4xl mb-2">Budget Dashboard v1</p>
       <div><strong className="mr-2">Maximum Budget:</strong>{maxBudget}</div>
       <div>
         <span className="mr-2"><strong>Budget Percentages</strong></span>
@@ -270,7 +270,17 @@ const Budgets = (props) => {
       </table>
         </div>
         <div className="col-span-1"> 
+
+          <div>
+          <p className="text-3xl mb-2"><strong>Pie Chart for Budget Categories</strong></p>
           <PieChart data={pieChart} />
+          </div>
+          
+
+          <p className="text-3xl mb-2"><strong>Bar Chart for Amount Spent versus Threshold</strong></p>
+          <i className="p-3">***Amount spent is in red, The maximum allowed for the budget type is is in gold.
+          The closer the amount spent is to the maximum the more the bar will be filled.
+           The chart is default I will update to make dynamic***</i>
           <BarChart data={barChartDataSet} />
         </div>
       </div>
