@@ -25,3 +25,29 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.fixed-width-100 {
+  width: 100px !important;
+  min-width: 100px !important; /* Ensure the width is not less than 100px */
+  max-width: 100px !important; /* Ensure the width does not exceed 100px */
+}
+
+.fixed-width-200 {
+  width: 200px !important;
+  min-width: 200px !important;
+  max-width: 200px !important;
+}
+
+.fixed-width-Amount {
+  width: 50px !important;
+  min-width: 50px !important; /* Ensure the width is not less than 100px */
+  max-width: 50px !important; /* Ensure the width does not exceed 100px */
+}
+
+
+/* Alternatively, target cells by their position in each row */
+.table-fixed-width td:nth-child(2) { /* First column */
+  width: 50px;
+}
+
+
