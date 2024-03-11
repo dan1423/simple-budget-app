@@ -1,6 +1,6 @@
 
-Budget Dashboard Project
-Description
+## Budget Dashboard Project
+## Description
 
 The Budget Dashboard project is a React-based web application designed to visualize and manage budget allocations across various categories such as Housing, Food, Utilities, and more. It leverages interactive Pie and Bar charts to provide insights into current spending against predefined budget thresholds.
 Motivation
@@ -12,7 +12,7 @@ Major Themes
 
     Data Visualization with D3.js: Integrated D3.js for rendering Pie and Bar charts, demonstrating its powerful capabilities in translating raw data into meaningful visual representations. This theme underlines the importance of effective data visualization techniques in conveying information intuitively to users.
 
-Reflections on Improvements
+## Reflections on Improvements
 
 If given the opportunity to redo this project, I would focus more on optimizing the data processing logic to enhance performance, especially when dealing with large datasets. Additionally, exploring more advanced state management solutions, like Redux or Context API, could provide cleaner state handling across components. Implementing responsive design principles to ensure the dashboard looks and functions well on various devices would also be a priority.
 
@@ -24,10 +24,10 @@ If given the opportunity to redo this project, I would focus more on optimizing 
 - Including more graphs to compare personal spending with public spending data.
 - Add percentages to the pie chart.
 
-Running the Project
+## Running the Project
 
-To run the Budget Dashboard:
+### To run the Budget Dashboard:
 
-  Go to website: https://dan1423.github.io/simple-budget-app/
-  You can change the amount on each row, and the pie chart changes in real time
-  Unfortunately, The bar graph is static because I did not have enough time
+  - Go to website: https://dan1423.github.io/simple-budget-app/
+  - You can change the amount on each row, and the pie chart changes in real time
+  - Unfortunately, The bar graph is static because I did not have enough time
