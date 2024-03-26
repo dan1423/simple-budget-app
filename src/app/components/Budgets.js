@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import PieChart from '../charts/PieChart';
 import BarChart from '../charts/BarChart';
-
+import BudgetTypeData from '../data/BudgetTypeData';
+import BudgetData from '../data/BudgetData';
 const Budgets = (props) => {
   const [budgets, setBudgets] = useState([]);
-  //const [UneditedBudgets, setUneditedBudgets] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [budgetTypes, setBudgetTypes] = useState([]);
   const [pieChart, setPieChart] = useState([]);
   const[maxBudget,setMaxBudget]=useState(0);  
   const[barChartDataSet,setBarChartDataSet]=useState([]);
-  // const[maxBudgetPerType,setMaxBudgetPerTypeType]=useState('');
-  const BASE_URL = 'https://dan1423-001-site1.btempurl.com/budget/budgetsamples';
+
+ 
   const budgetPercentages = {
     Housing: 30,
     Utilities: 10,
@@ -61,34 +61,14 @@ const Budgets = (props) => {
   };
 
   const fetchBudgetTypes = async () => {
-    try {
-      const response = await fetch('https://dan1423-001-site1.btempurl.com/budget/budgettypes');
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error('There was a problem with your fetch operation:', error);
-      throw error; // Re-throw the error for further handling if necessary
-    }
+    return BudgetTypeData;
+
+  
   };
 
   useEffect(() => {
-    fetch('https://dan1423-001-site1.btempurl.com/budget/budgetsamples')
-      .then(response => response.json())
-      .then(data => {
-        setBudgets(data);
-        setMaxBudget(4000);
-       
-        if (!isLoaded) {
-          //setUneditedBudgets(data);
-          setIsLoaded(true);
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching budget list:', error);
-      });
+    setBudgets(BudgetData);
+    setMaxBudget(4000);
   }, []);
 
   useEffect(() => {
@@ -99,11 +79,12 @@ const Budgets = (props) => {
   const PreparePieChartData = () => {
     let sumsArray = [];
     let currentIndex = -1;
+    
     budgets.forEach(element => {
-      console.log("element",element); 
+      
       let data = sumsArray.find(function (ele, index) {
         currentIndex = index;
-        return ele.name === element.budgetTypeCategory;
+        return ele.name === element.budgetType;
       });
    
       if (data === undefined) {
@@ -116,6 +97,7 @@ const Budgets = (props) => {
       }
 
      else {
+      
         sumsArray[currentIndex].value += parseInt(element.budgetAmount);    
       }
     });
@@ -135,11 +117,19 @@ const Budgets = (props) => {
         budget.budgetId === budgetId ? { ...budget, [field]: value } : budget
       )
     );
+  };
+
+
+  const handleMaxBudgetChange = (value) => {
+    setBudgets(budgets =>
+      budgets.map(budget =>
+        budget.budgetId === budgetId ? { ...budget, [field]: value } : budget
+      )
+    );
 
 
   
   };
-
     // Grouping budget types by category
     const groupedBudgetTypes = budgetTypes.reduce((acc, { budgetTypeId, budgetTypeName, budgetTypeCategory }) => {
       if (!acc[budgetTypeCategory]) {
@@ -198,13 +188,19 @@ const Budgets = (props) => {
 
   return (
     <div>
-      <p className="text-4xl mb-2">Budget Dashboard v1</p>
-      <div><strong className="mr-2">Maximum Budget:</strong>{maxBudget}</div>
+      <div className="justify-center items-center"><p className="text-4xl mb-2 content-center">Budget Dashboard v1</p></div>
+      
+      <div className="text-2xl mb-2"><label>Edit Current Budget:</label> <input 
+                    type="number"
+                    defaultValue={maxBudget}
+                    onChange={(e) => handleMaxBudgetChange(e.target.value)}>
+                  </input></div>
       <div>
-        <span className="mr-2"><strong>Budget Percentages</strong></span>
-        {Object.entries(budgetPercentages).map(([category, percentage], index) => (
-        <span key={index} className="mr-2">{`${category}: ${percentage}%`}</span>
-      ))}
+        <span className="mr-2"><strong>Budget Percentages:</strong></span>
+        <ul>{Object.entries(budgetPercentages).map(([category, percentage], index) => (
+        <li key={index} className="mr-2">{`${category}: ${percentage}%`}</li>
+      ))}</ul>
+        
       </div>
       <div className="grid grid-flow-col gap-3">
         <div className="col-span-4">
