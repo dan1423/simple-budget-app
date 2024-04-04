@@ -25,14 +25,6 @@ export const BudgetData = [
         },
         {
           "budgetId": 4,
-          "budgetType": "Internet",
-          "budgetAmount": 60,
-          "budgetDate": "2023-08-23T00:00:00",
-          "budgetNotes": "Weekly groceries",
-          "budgetTypeCategory": "Utilities"
-        },
-        {
-          "budgetId": 5,
           "budgetType": "Groceries",
           "budgetAmount": 287,
           "budgetDate": "2023-05-18T00:00:00",
@@ -40,28 +32,14 @@ export const BudgetData = [
           "budgetTypeCategory": "Food"
         },
         {
-          "budgetId": 6,
+          "budgetId": 5,
           "budgetType": "Internet",
           "budgetAmount": 152,
           "budgetDate": "2023-01-29T00:00:00",
           "budgetNotes": "Monthly bill",
           "budgetTypeCategory": "Utilities"
         },
-        {
-          "budgetId": 7,
-          "budgetType": "Utilities",
-          "budgetAmount": 388,
-          "budgetDate": "2023-03-27T00:00:00",
-          "budgetNotes": "Weekly groceries",
-          "budgetTypeCategory": "Utilities"
-        },
-        {
-          "budgetId": 8,
-          "budgetType": "Internet",
-          "budgetAmount": 175,
-          "budgetDate": "2023-04-02T00:00:00",
-          "budgetNotes": "Subscription fee",
-          "budgetTypeCategory": "Utilities"
-        }
+        
+        
 ];
 export default BudgetData;
